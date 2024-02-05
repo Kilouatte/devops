@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+    backend:
+        build: './Java/api/simple-api-student-main/'
+        networks:
+        - app-network
+        depends_on:
+        - database
+        volumes:
+        - my-volume:/var/lib/postgresql/data
+    database:
+        build: './Database/'
+        networks:
+        - app-network
+
+    httpd:
+        build: './http/'
+        ports:
+        - "8000:80"
+        networks:
+        - app-network
+        depends_on:
+        - backend
+
+networks:
+    app-network:
+
+volumes:
+    my-volume: './Database/data'
+
+
