@@ -152,7 +152,7 @@ volumes:
 - `networks:` -> The networks key is used to specify the networks that the service should be connected to. In this case, the backend and database services are connected to the app-network network.
 - `depends_on:` -> The depends_on key is used to specify the services that the current service depends on.
 - `image:` -> The image key is used to specify the name of the image to use for the service. In this case, the backend service uses the kilouatt/backend:1.0 image.
-### For image, we choos between build and image. If we use build, we have to specify the path to the Dockerfile and the context in which the build should be run. If we use image, we have to specify the name of the image to use for the service, we can find it on docker hub.
+### For image, we choose between build and image. If we use build, we have to specify the path to the Dockerfile and the context in which the build should be run. If we use image, we have to specify the name of the image to use for the service, we can find it on docker hub.
 - `volumes:` -> The volumes key is used to specify the volumes that should be mounted for the service. In this case, we use a named volume called database to persist the data for the database service.
 ### For the volumes, if we use a name, compose will create a volume with this name. If we use a path, compose will mount the volume to the path.
 - `ports` -> The ports key is used to specify the ports that should be exposed for the service. In this case, the httpd service exposes port 80 on the host machine.
