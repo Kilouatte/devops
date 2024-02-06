@@ -2,27 +2,36 @@ version: '3.8'
 
 services:
     backend:
-        build: ./Java/api/simple-api-student-main/
+        #build: ./Java/api/simple-api-student-main/
+        env_file: .env
         networks:
           - app-network
         depends_on:
           - database
+        image: kilouatt/backend:1.0
 
     database:
-        build: ./Database
+        #build: ./Database
         volumes:
-          - ./Database/data:/var/lib/postgresql/data
+          - database:/var/lib/postgresql/data
         networks:
           - app-network
+        env_file: .env
+        image: kilouatt/database:1.0
 
     httpd:
-        build: ./Http
+        #build: ./Http
         ports:
           - 80:80
         networks:
           - app-network
         depends_on:
           - backend
+        image: kilouatt/httpd:1.0
 
 networks:
     app-network:
+
+
+volumes:
+    database:
