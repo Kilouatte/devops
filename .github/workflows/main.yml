@@ -36,6 +36,8 @@ jobs:
              context: ./tp1/Java/api/simple-api-student-main
           # Note: tags has to be all lower-case
              tags: ${{secrets.DOCKERHUB_USERNAME}}/backend:lastest
+          # build on feature branches, push only on main branch
+             push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push database
         # DO the same for database
@@ -45,6 +47,8 @@ jobs:
              context: ./tp1/Database
           # Note: tags has to be all lower-case
              tags: ${{secrets.DOCKERHUB_USERNAME}}/database:latest
+          # build on feature branches, push only on main branch
+             push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push httpd
         # DO the same for httpd
@@ -54,6 +58,8 @@ jobs:
              context: ./tp1/Http
           # Note: tags has to be all lower-case.
              tags: ${{secrets.DOCKERHUB_USERNAME}}/httpd:latest
+          # build on feature branches, push only on main branch
+             push: ${{ github.ref == 'refs/heads/main' }}
 
       #finally build your app with the latest command
       - name: Build and test with Maven
