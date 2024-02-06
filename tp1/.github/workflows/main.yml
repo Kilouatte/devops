@@ -2,8 +2,11 @@ name: CI devops 2023
 on:
   #to begin you want to launch this job in main and develop
   push:
-    branches: #TODO 
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   test-backend: 
@@ -22,5 +25,5 @@ jobs:
 
      #finally build your app with the latest command
       - name: Build and test with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn -B package --file ./Java/api/simple-api-student/pom.xml
 
