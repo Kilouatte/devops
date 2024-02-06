@@ -22,8 +22,6 @@ jobs:
             java-version: '17'
             distribution: 'corretto'
 
-        
-
      #finally build your app with the latest command
       - name: Build and test with Maven
-        run: mvn -B package --file ./tp1/Java/api/simple-api-student/pom.xml
+        run: mvn clean verify --file ./tp1/Java/api/simple-api-student-main/pom.xml
