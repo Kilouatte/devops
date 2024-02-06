@@ -161,7 +161,15 @@ volumes:
 
 ## Network will be used to connect the different containers together. It will allow the containers to communicate with each other. So we specify the same name for every container.
 
-## Now for the docker publish :
+## We have a .env file to store the environment variables to connect to the database :
+
+```bash
+POSTGRES_DB=db
+POSTGRES_USER=usr
+POSTGRES_PASSWORD=pwd
+```
+
+# Now for the docker publish :
 
 ### How to publish the images to DockerHub :
 - First we have to login to DockerHub with the command `docker login`
