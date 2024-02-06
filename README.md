@@ -43,7 +43,7 @@ COPY ./insertData.sql /docker-entrypoint-initdb.d/
 `docker build -t Kilouatte/backend`
 
 ## How to run the container with arguments -p to expose the port and --net to connect to the network:
-`docker run -p "8080:8080" --name=backend --net=app-network ycathelain/simpleapi`
+`docker run -p "8080:8080" --name=backend --net=app-network Kilouatte/backend`
 ### We had --name=database to give a name to the container
 
 ## Backend Dockerfile configuration :
