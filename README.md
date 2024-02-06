@@ -182,3 +182,30 @@ POSTGRES_PASSWORD=pwd
 - The images are published on DockerHub and can be pulled by anyone who has access to the internet.
 - The images are tagged with the version number 1.0 to indicate that they are the first version of the images.
 - We can push different versions of the images to DockerHub to keep track of the changes and to allow users to choose which version they want to use.
+
+# TP2 : GitActions:
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>testcontainers</artifactId>
+        <version>${testcontainers.version}</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>jdbc</artifactId>
+        <version>${testcontainers.version}</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>${testcontainers.version}</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+```
+## Q2.1 : What are testcontainers?
+- Testcontainers is a Java library that provides lightweight, throwaway instances of common databases or anything else that can run in a Docker container. It is used to write integration tests for applications.
