@@ -1,0 +1,47 @@
+name: CI deployement devops 2023
+
+on:
+  workflow_run:
+    workflows:
+      - "CI Docker devops 2023"
+    types:
+        - completed
+    branches:
+        - main
+jobs:
+  deployement:
+    if: ${{github.event.workflow_run.conclusion == 'success'}}
+    runs-on: ubuntu-22.04
+    steps:
+      #checkout your github code using actions/checkout@v2.5.0
+      - name: Checkout code
+        uses: actions/checkout@v2.5.0
+
+      #deploy the database on github using dawidd6/action-ansible-playbook@v3
+      - name: Deploy database
+        uses: dawidd6/action-ansible-playbook@v3
+        with:
+            playbook: tp3/ansible-env/playbook.yml
+            inventory: tp3/ansible-env/inventories
+            tags: ${{secrets.DOCKERHUB_USERNAME}}/database:latest
+            push: ${{ github.ref == 'refs/heads/main' }}
+
+      #deploy the httpd on github
+      - name: Deploy httpd
+        uses: dawidd6/action-ansible-playbook@v3
+        with:
+            playbook: tp3/ansible-env/playbook.yml
+            inventory: tp3/ansible-env/inventories
+            tags: ${{secrets.DOCKERHUB_USERNAME}}/httpd:latest
+            push: ${{ github.ref == 'refs/heads/main' }}
+
+      #deploy the backend on github
+      - name: Deploy backend
+        uses: dawidd6/action-ansible-playbook@v3
+        with:
+            playbook: tp3/ansible-env/playbook.yml
+            inventory: tp3/ansible-env/inventories
+            tags: ${{secrets.DOCKERHUB_USERNAME}}/backend:latest
+            #build on feature branches, push only on main branch
+            push: ${{ github.ref == 'refs/heads/main' }}
+
