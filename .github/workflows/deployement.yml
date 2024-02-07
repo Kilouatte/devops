@@ -28,6 +28,9 @@ jobs:
               [all]
               julien.perbet.takima.cloud
             vault_password: ${{secrets.VAULT_PASSWORD}}
+            options: |
+              -u centos
+
 
 
 
