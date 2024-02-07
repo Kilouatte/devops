@@ -17,31 +17,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2.5.0
 
-      #deploy the database on github using dawidd6/action-ansible-playbook@v3
-      - name: Deploy database
-        uses: dawidd6/action-ansible-playbook@v3
+      #run ansible playbook to deploy the backend
+      - name: Run Ansible playbook
+        uses: dawidd6/action-ansible-playbook@v2
         with:
             playbook: tp3/ansible-env/playbook.yml
+            key: ${{secrets.SSH_PRIVATE_KEY}}
             inventory: tp3/ansible-env/inventories
-            tags: ${{secrets.DOCKERHUB_USERNAME}}/database:latest
-            push: ${{ github.ref == 'refs/heads/main' }}
+            directory: tp3/ansible-env
+            vault_password: ${{secrets.VAULT_PASSWORD}}
 
-      #deploy the httpd on github
-      - name: Deploy httpd
-        uses: dawidd6/action-ansible-playbook@v3
-        with:
-            playbook: tp3/ansible-env/playbook.yml
-            inventory: tp3/ansible-env/inventories
-            tags: ${{secrets.DOCKERHUB_USERNAME}}/httpd:latest
-            push: ${{ github.ref == 'refs/heads/main' }}
 
-      #deploy the backend on github
-      - name: Deploy backend
-        uses: dawidd6/action-ansible-playbook@v3
-        with:
-            playbook: tp3/ansible-env/playbook.yml
-            inventory: tp3/ansible-env/inventories
-            tags: ${{secrets.DOCKERHUB_USERNAME}}/backend:latest
-            #build on feature branches, push only on main branch
-            push: ${{ github.ref == 'refs/heads/main' }}
 
