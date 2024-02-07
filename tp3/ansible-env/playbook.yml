@@ -1,6 +1,8 @@
 - hosts: all
   gather_facts: false
   become: true
+  vars-files:
+    - secret.yml
   roles:
     - docker
     - network
