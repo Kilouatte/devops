@@ -1,0 +1,8 @@
+- name: Run Front
+  docker_container:
+    name: front
+    image: kilouatt/frontend:latest
+    ports:
+      - 80:80
+    env:
+      VUE_APP_API_URL: "{{ VUE_APP_API_URL }}"

@@ -3,6 +3,8 @@
   docker_container:
     name: database
     image: kilouatt/database:latest
+    recreate: true
+    pull: true
     env:
       POSTGRES_DB: "{{POSTGRES_DB}}"
       POSTGRES_USER: "{{POSTGRES_USER}}"

@@ -3,9 +3,12 @@
   docker_container:
     name: backend
     image: kilouatt/backend:latest
+    recreate: true
+    pull: true
     env:
       POSTGRES_DB: "{{POSTGRES_DB}}"
       POSTGRES_USER: "{{POSTGRES_USER}}"
       POSTGRES_PASSWORD: "{{POSTGRES_PASSWORD}}"
+
     networks:
       - name: app_network
