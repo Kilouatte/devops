@@ -57,7 +57,7 @@ jobs:
           push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push frontend
-        # DO the same for frontend
+        # DO the same for frontendd
         uses: docker/build-push-action@v3
         with:
           # relative path to the place where source code with Dockerfile is located
