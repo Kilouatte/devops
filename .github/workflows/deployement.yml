@@ -21,10 +21,10 @@ jobs:
       - name: Run Ansible playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
-            playbook: tp3/ansible-env/playbook.yml
+            playbook: playbook.yml
             key: ${{secrets.SSH_PRIVATE_KEY}}
             inventory: tp3/ansible-env/inventories
-            directory: tp3/ansible-env
+            directory: tp3/ansible-env/
             vault_password: ${{secrets.VAULT_PASSWORD}}
 
 
