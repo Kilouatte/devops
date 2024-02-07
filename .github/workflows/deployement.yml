@@ -17,7 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2.5.0
 
-      #run ansible playbook to deploy the backendd
+      #run ansible playbook to deploy the backend
       - name: Run Ansible playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
