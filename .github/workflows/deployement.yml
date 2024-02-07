@@ -23,8 +23,10 @@ jobs:
         with:
             playbook: playbook.yml
             key: ${{secrets.SSH_PRIVATE_KEY}}
-            inventory: tp3/ansible-env/inventories/
             directory: tp3/ansible-env/
+            inventory: |
+              [all]
+              julien.perbet.takima.cloud
             vault_password: ${{secrets.VAULT_PASSWORD}}
 
 
