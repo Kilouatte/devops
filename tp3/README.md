@@ -58,7 +58,7 @@ all:
 ```
 
 ### We use `ansible-playbook -i inventories/setup.yml playbook.yml` to test the connection:
-# IMAGE
+![](/tp3/img/connection_playbook_ansible.png)
 
 ## playbook.yml second configuration
 ```yaml
