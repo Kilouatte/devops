@@ -2,7 +2,9 @@
   docker_container:
     name: front
     image: kilouatt/frontend:latest
+    recreate: true
+    pull: true
     ports:
-      - 80:80
+      - "80:80"
     env:
       VUE_APP_API_URL: "{{ VUE_APP_API_URL }}"
