@@ -23,7 +23,7 @@
 `chmod 400 ./id_rsa`
 
 ### We connect to the server
-`ssh -i ./id_rsa cento@julien.perbet.takima.cloud`
+`ssh -i ~/.ssh/id_rsa_takima cento@julien.perbet.takima.cloud`
 #### We need to validate the fingerprint
 
 # TP 3 - Ansible
@@ -108,6 +108,10 @@ all:
 
 ## We do `ansible-galaxy init roles/docker` to create the role docker.
 ### We run again `ansible-playbook -i inventories/setup.yml playbook.yml`.
+
+# We create a secret  encrypted file to store all the sensitive data.
+## And our command is ` ansible-env % ansible-playbook -i inventories/setup.yml -e @secret.yml --ask-vault-password  playbook.yml`
+
 
 
 
