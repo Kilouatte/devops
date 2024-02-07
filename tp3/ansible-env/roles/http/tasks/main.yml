@@ -3,5 +3,7 @@
   docker_container:
     name: httpd
     image: kilouatt/httpd:latest
+    ports:
+      - "80:80"
     networks:
       - name: app_network
