@@ -1,0 +1,7 @@
+#Run HTTPD
+- name: Run HTTPD
+  docker_container:
+    name: httpd
+    image: kilouatt/httpd:latest
+    networks:
+      - name: app_network

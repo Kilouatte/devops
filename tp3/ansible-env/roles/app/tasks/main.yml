@@ -1,0 +1,7 @@
+#Run Backend
+- name: Run Backend
+  docker_container:
+    name: backend
+    image: kilouatt/backend:latest
+    networks:
+      - name: app_network

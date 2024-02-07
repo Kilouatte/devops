@@ -101,8 +101,13 @@ all:
     service: name=docker state=started
     tags: docker
 ```
+- We install everything we need to install docker.
+- After this we can delete the docker installation since it is already installed.
 
 ### We use `ansible-playbook -i inventories/setup.yml playbook.yml` to install docker.
+
+## We do `ansible-galaxy init roles/docker` to create the role docker.
+### We run again `ansible-playbook -i inventories/setup.yml playbook.yml`.
 
 
 
