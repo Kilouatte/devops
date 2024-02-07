@@ -38,13 +38,11 @@ all:
       hosts: julien.perbet.takima.cloud
 ```
 ### After this command `ansible all -i inventories/setup.yml -m ping` we have :
-# IMAGE
 
-### We use `ansible all -i inventories/setup.yml -m setup -a "filter=ansible_distribution*"` to get the distribution of the server:
-# IMAGE
 
-### Now we delete apache with `ansible all -i inventories/setup.yml -m yum -a "name=httpd state=absent" --become`:
-# IMAGE
+### We use `ansible all -i inventories/setup.yml -m setup -a "filter=ansible_distribution*"` to get the distribution of the server.
+
+### Now we delete apache with `ansible all -i inventories/setup.yml -m yum -a "name=httpd state=absent" --become`.
 
 ## playbook.yml first configuration
 ```yaml
@@ -57,8 +55,7 @@ all:
      ping:
 ```
 
-### We use `ansible-playbook -i inventories/setup.yml playbook.yml` to test the connection:
-![](/tp3/img/connection_playbook_ansible.png)
+### We use `ansible-playbook -i inventories/setup.yml playbook.yml` to test the connection.
 
 ## playbook.yml second configuration
 ```yaml
@@ -105,8 +102,7 @@ all:
     tags: docker
 ```
 
-### We use `ansible-playbook -i inventories/setup.yml playbook.yml` to install docker:
-# IMAGE
+### We use `ansible-playbook -i inventories/setup.yml playbook.yml` to install docker.
 
 
 
