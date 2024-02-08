@@ -338,7 +338,7 @@ all:
 # Playbook commented : [playbook.yml](tp3/ansible-env/playbook.yml)
 ## Others files are in : 
 - [Roles](tp3/ansible-env/roles)
-- [Inventory/Setup.yml](tp3/ansible-env/inventories/setup/yml)
+- [Inventory/Setup.yml](tp3/ansible-env/inventories/setup.yml)
 - [httpd.conf](tp1/Http/httpd.conf)
 
 
