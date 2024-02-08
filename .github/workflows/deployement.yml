@@ -1,0 +1,36 @@
+name: CI deployement devops 2023
+
+on:
+  workflow_run:
+    workflows:
+      - "CI Docker devops 2023"
+    types:
+        - completed
+    branches:
+        - main
+jobs:
+  deployement:
+    if: ${{github.event.workflow_run.conclusion == 'success'}}
+    runs-on: ubuntu-22.04
+    steps:
+      #checkout your github code using actions/checkout@v2.5.0
+      - name: Checkout code
+        uses: actions/checkout@v2.5.0
+
+      #run ansible playbook to deploy the backend.
+      - name: Run Ansible playbook
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+            playbook: playbook.yml
+            key: ${{secrets.SSH_PRIVATE_KEY}}
+            directory: tp3/ansible-env
+            inventory: |
+              [all]
+              julien.perbet.takima.cloud
+            vault_password: ${{secrets.VAULT_PASSWORD}}
+            options: |
+              -u centos
+
+
+
+

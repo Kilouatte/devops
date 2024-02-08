@@ -1,0 +1,13 @@
+#Run HTTPD
+- name: Run HTTPD
+  docker_container:
+    name: httpd
+    image: kilouatt/httpd:latest
+    state: started
+    recreate: true
+    pull: true
+    ports:
+      - 8080:80
+    networks:
+      - name: app_network
+
