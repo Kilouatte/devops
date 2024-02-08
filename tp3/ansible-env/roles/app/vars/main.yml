@@ -1,4 +1,0 @@
-# On définit les variables d'environnement
-POSTGRES_DB: db
-POSTGRES_USER: usr
-POSTGRES_PASSWORD: pwd

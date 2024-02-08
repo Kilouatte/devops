@@ -1,5 +1,0 @@
-#Create network
-- name: Create network
-  docker_network:
-    name: app_network
-    state: present
