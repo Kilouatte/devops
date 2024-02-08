@@ -22,7 +22,7 @@
 ### We give the read only permission to the key
 `chmod 400 ./id_rsa`
 
-### We connect to the server
+### We connect to the server.
 `ssh -i ~/.ssh/id_rsa_takima cento@julien.perbet.takima.cloud`
 #### We need to validate the fingerprint
 
