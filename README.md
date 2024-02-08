@@ -336,6 +336,14 @@ all:
 ### And our command is ` ansible-env % ansible-playbook -i inventories/setup.yml -e @secret.yml --ask-vault-password  playbook.yml`
 
 # Playbook commented : [playbook.yml](tp3/ansible-env/playbook.yml)
+## Others files are in : 
+- [Roles](tp3/ansible-env/roles)
+- [Inventory/Setup.yml](tp3/ansible-env/inventories/setup/yml)
+- [httpd.conf](tp1/Http/httpd.conf)
+
+
+# WARNING : LOAD BALANCING NOT WORKING, ILYES AND I WORKED ON IT VERY LATE AND IT DIDN'T WORKD FOR SOME REASON.
+# I'M NOT SURE EVERYTHING TURNED BACK AS IT SHOULD BE, BUT I DID ALL THE CHECKS !
 
 
 
