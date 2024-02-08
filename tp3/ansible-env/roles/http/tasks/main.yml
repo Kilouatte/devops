@@ -7,9 +7,7 @@
     recreate: true
     pull: true
     ports:
-      - 80:80
+      - 8080:80
     networks:
       - name: app_network
-    env:
-      VUE_APP_API_URL: "{{ VUE_APP_API_URL }}"
 

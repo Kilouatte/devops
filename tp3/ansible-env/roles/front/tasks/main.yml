@@ -4,6 +4,8 @@
     image: kilouatt/frontend:latest
     recreate: true
     pull: true
+    ports:
+      - 80:80
     networks:
       - name: app_network
     env:
