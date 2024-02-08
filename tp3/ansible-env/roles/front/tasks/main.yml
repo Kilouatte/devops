@@ -4,6 +4,7 @@
     image: kilouatt/frontend:latest
     recreate: true
     pull: true
+  # Putting the good ports
     ports:
       - 80:80
     networks:

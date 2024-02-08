@@ -1,8 +1,13 @@
+# This file is the main playbook that will be executed by the ansible command
+# We start with hosts: all to execute the playbook on all the hosts
 - hosts: all
   gather_facts: false
+# We define the become to true to execute the playbook as root
   become: true
+# We define the vars_files to load the secret.yml file
   vars_files:
     - secret.yml
+# We define the roles to be executed in the good order
   roles:
     - docker
     - network

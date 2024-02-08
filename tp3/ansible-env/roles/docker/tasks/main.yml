@@ -1,5 +1,6 @@
 
-
+# This file is used to install docker on the target machine
+# We start by installing the required packages
   - name: Install device-mapper-persistent-data
     yum:
       name: device-mapper-persistent-data
@@ -30,7 +31,7 @@
       executable: pip3
     vars:
       ansible_python_interpreter: /usr/bin/python3
-
+# We check if the docker service is running
   - name: Make sure Docker is running
     service: name=docker state=started
     tags: docker

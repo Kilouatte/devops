@@ -1,25 +1,14 @@
-#Run Backendd
-- name: Run Backend1
-  docker_container:
-    name: backend1
-    image: kilouatt/backend:latest
-    recreate: true
-    pull: true
-    env:
-      POSTGRES_DB: "{{POSTGRES_DB}}"
-      POSTGRES_USER: "{{POSTGRES_USER}}"
-      POSTGRES_PASSWORD: "{{POSTGRES_PASSWORD}}"
-
-    networks:
-      - name: app_network
-
 #Run Backend
-- name: Run Backend2
+- name: Run Backend
   docker_container:
-    name: backend2
+    name: backend
+    # We take the good image
     image: kilouatt/backend:latest
     recreate: true
+    # We recreate the container every time
     pull: true
+
+    # We take the good environment variables
     env:
       POSTGRES_DB: "{{POSTGRES_DB}}"
       POSTGRES_USER: "{{POSTGRES_USER}}"

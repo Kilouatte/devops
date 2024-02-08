@@ -1,7 +1,10 @@
 all:
   vars:
+# We define the ansible_user and ansible_key variables to be used in the playbook
     ansible_user: "{{ ansible_user }}"
     ansible_ssh_private_key_file: "{{ ansible_key }}"
   children:
     prod:
+# We define the hosts to be used in the prod environment
       hosts: "{{ ansible_host }}"
+# All the variables are defined in the secret.yml using the vault.

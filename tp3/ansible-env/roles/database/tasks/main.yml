@@ -2,9 +2,12 @@
 - name: Run Database
   docker_container:
     name: database
+# We take the good image
     image: kilouatt/database:latest
+# We recreate the container every time
     recreate: true
     pull: true
+# We take the good environment variables
     env:
       POSTGRES_DB: "{{POSTGRES_DB}}"
       POSTGRES_USER: "{{POSTGRES_USER}}"
