@@ -2,7 +2,7 @@
 - name: Run Backend1
   docker_container:
     name: backend
-    image: kilouatt/backend1:latest
+    image: kilouatt/backend:latest
     recreate: true
     pull: true
     env:
@@ -17,7 +17,7 @@
 - name: Run Backend2
   docker_container:
     name: backend
-    image: kilouatt/backend2:latest
+    image: kilouatt/backend:latest
     recreate: true
     pull: true
     env:
