@@ -1,7 +1,7 @@
 #Run Backend
 - name: Run Backend1
   docker_container:
-    name: backend
+    name: backend1
     image: kilouatt/backend:latest
     recreate: true
     pull: true
@@ -16,7 +16,7 @@
 #Run Backend
 - name: Run Backend2
   docker_container:
-    name: backend
+    name: backend2
     image: kilouatt/backend:latest
     recreate: true
     pull: true
